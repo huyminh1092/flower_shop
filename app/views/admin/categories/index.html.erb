@@ -1,0 +1,31 @@
+
+
+<html>
+    <head>
+        <title>Category List</title>
+    </head>
+    <body>
+    <div class="container">
+        <table border="1" style="width:600px;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Edit</th>
+                
+                <th>Delete</th>
+            </tr>
+            <tr <% @categories.each do |category| %>>
+             <td> <%= category.id %></td>
+             <td> <%= image_tag category.image, size: "200x200", alt: "Edit Entry" %></td>
+             <td> <%= category.name %></td>
+             <td> <%= link_to "Edit", edit_admin_category_path(category.id) %> </td>
+            
+             <td><%= button_to 'Delete', admin_category_path(category), method: 'delete'  %></td>
+
+            </tr <% end %>>
+            
+        </table>
+        </div>
+    </body>
+</html>

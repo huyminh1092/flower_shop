@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+    <%= f.input :name %>
+    <%= f.file_field :image %> 
+    
+    <%= f.submit %>
+    <%= link_to "Reset", new_admin_category_path %>
+<% end %>
+
+<h5>Hinhf anhr</h5>
+<% if @category.image.present? %>
+<%= image_tag @category.image, size: "200x200", alt: "Edit Entry" %>
+<% end %>

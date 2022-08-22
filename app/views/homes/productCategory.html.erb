@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Fior</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+  rel="stylesheet"
+/>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <%= render "homes/header" %>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- gallery section -->
+  <section class="gallery_section layout_padding">
+
+        <div class="heading_container justify-content-center">
+      <h2>
+      The topic of <%= @category.name %>
+      </h2>
+    </div>
+    <div class="container">
+      <div class="img_container">
+     
+      </div>
+  </section>
+  <!-- end gallery section -->
+  <section class="latest-product spad">
+  
+  <div class="row featured">
+    <% @products.each do |product| %>
+  <div class="col-lg-3 col-md-4 col-sm-6 ">
+    <div class="featured__item">
+      <div
+        class="featured__item__pic set-bg"
+        data-setbg="img/featured/feature-3.jpg"
+      >
+      <%= image_tag product.image, size: "270x300", alt: "Edit Entry", class: "featured_item_pic" %>
+        <ul class="featured__item__pic__hover">
+          <li>
+          
+            <%= link_to image_tag('a-02.png', size: "48x49"), admin_product_path(product.id) %>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-retweet"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="featured__item__text">
+        <h6><a href="#"><%= product.name %></a></h6>
+        <h5><%= product.price %> VND</h5>
+      </div>
+    </div>
+  </div>
+  <% end %>
+ 
+</div>
+<nav aria-label="Page navigation example"
+style="margin-left: 750px; margin-top: 19px;">
+<ul class="pagination">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+</nav>
+ </section>
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_logo">
+            <h5>
+              Fior
+            </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links pl-lg-5">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li class="active">
+                <a href="gallery.html">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href="contact.html">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_insta">
+            <h5>
+              Instagram
+            </h5>
+            <div class="insta_container">
+              <div>
+                <a href="">
+                  <div class="insta-box b-1">
+                  <%= image_tag ('insta-1.png') %>
+                    <img src="images/insta-1.png" alt="">
+                  </div>
+                </a>
+                <a href="">
+                  <div class="insta-box b-2">
+                  <%= image_tag ('insta-2.png') %>
+                    <img src="images/insta-2.png" alt="">
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <div class="insta-box b-3">
+                  <%= image_tag ('insta-3.png') %>
+                    <img src="images/insta-3.png" alt="">
+                  </div>
+                </a>
+                <a href="">
+                  <div class="insta-box b-4">
+                  <%= image_tag ('insta-4.png') %>
+                    <img src="images/insta-4.png" alt="">
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <div class="insta-box b-3">
+                  <%= image_tag ('insta-5.png') %>
+                    <img src="images/insta-5.png" alt="">
+                  </div>
+                </a>
+                <a href="">
+                  <div class="insta-box b-4">
+                  <%= image_tag ('insta-6.png') %>
+                    <img src="images/insta-6.png" alt="">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              Contact
+            </h5>
+            <div>
+            <%= image_tag ('location-white.png') %>
+              <img src="images/location-white.png" alt="">
+              <p>
+                It is a long
+                fact that a reader
+              </p>
+            </div>
+            <div>
+            <%= image_tag ('telephone-white.png') %>
+              <img src="images/telephone-white.png" alt="">
+              <p>
+                +01 1234567890
+              </p>
+            </div>
+            <div>
+            <%= image_tag ('envelope-white.png') %>
+              <img src="images/envelope-white.png" alt="">
+              <p>
+                demo@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <%= render "homes/footer" %>
+
+</body>
+
+</html>

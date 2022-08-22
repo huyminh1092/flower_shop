@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Product List</title>
+    </head>
+    <body>
+    <div class="container">
+        <table border="1" style="width:600px;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Edit</th> 
+                <th>Delete</th>
+            </tr>
+            <tr <% @products.each do |product| %>>
+             <td> <%= product.id %></td>
+             <td> <%= product.name %></td>
+             <td> <%= product.quantity %></td>
+             <td> <%= product.price %></td>
+             <td> <%= image_tag product.image, size: "200x200", alt: "Edit Entry" %></td>
+             
+             <td><%= link_to "Edit", edit_admin_product_path(product.id) %></td>
+            
+             <td><%= button_to 'Delete', admin_product_path(product), method: 'delete'  %></td>
+
+            </tr <% end %>>
+            
+        </table>
+        </div>
+    </body>
+</html>

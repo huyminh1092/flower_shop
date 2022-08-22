@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :quantity %>
+    <%= f.association :category, collection: Category.all, label_method: :name, value_method: :id,label: "Category", include_blank: false%>
+    <%= f.input :image %>
+    <%= f.submit %>
+    <%= link_to "Reset", new_admin_product_path %>
+<% end %>
+
+<h5>Hinhf anhr</h5>
+<% if @product.image.present? %>
+<%= image_tag @product.image, size: "200x200", alt: "Edit Entry" %>
+<% end %>
+<% if @product.image.nil? %>
+<%= image_tag ('https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png') %>
+<h1>huhu</h1>
+<% end %>
